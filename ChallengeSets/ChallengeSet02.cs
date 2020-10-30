@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ChallengeSets
 {
@@ -58,7 +59,21 @@ namespace ChallengeSets
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+
+            int total = 0;
+            if (numbers != null)
+            {
+                foreach (var num in numbers)
+                {
+                    total += num;
+                }
+                return total;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
         public int SumEvens(int[] numbers)
