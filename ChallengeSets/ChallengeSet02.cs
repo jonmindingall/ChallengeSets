@@ -78,12 +78,47 @@ namespace ChallengeSets
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            int total = 0;
+            if (numbers != null)
+            {
+                foreach (var num in numbers)
+                {
+                    if (num % 2 == 0)
+                    {
+                        total += num;
+                    }
+                }
+                return total;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            int total = 0;
+            if (numbers != null)
+            {
+                foreach (var num in numbers)
+                {
+                    total += num;
+                }
+                if (total % 2 != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
