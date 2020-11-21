@@ -94,14 +94,15 @@ namespace ChallengeSets
                 }
             }
             return oddList.ToArray();
-            
-
-            
+                    
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
         }
     }
 }
