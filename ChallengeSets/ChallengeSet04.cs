@@ -57,7 +57,32 @@ namespace ChallengeSets
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            else
+            {
+                double evenSums = 0.00;
+                double count = 0.00;
+                foreach (var item in numbers)
+                {
+                    if (item % 2 == 0)
+                    {
+                        count ++;
+                        evenSums += item;
+                    }
+                }
+                if (count > 0)
+                {
+                    return evenSums / count;
+                }
+                else
+                {
+                    return 0;
+                }
+                
+            }
         }
 
         public int Factorial(int number)
