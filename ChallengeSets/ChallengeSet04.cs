@@ -5,7 +5,21 @@ namespace ChallengeSets
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            
+            foreach (var item in numbers)
+            {
+                
+                if (item % 2 == 0)
+                {
+                    sum += item;
+                }
+                else
+                {
+                    sum -= item;
+                }
+            }
+            return sum;
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
