@@ -99,7 +99,17 @@ namespace ChallengeSets
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            if (number == 0)
+            {
+                return 1;
+            }
+            int fact = 1;
+            while (number != 1)
+            {
+                fact = fact * number;
+                number--;
+            }
+            return fact;
         }
     }
 }
