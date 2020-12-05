@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 namespace ChallengeSets
 {
     public class ChallengeSet04
@@ -29,7 +31,8 @@ namespace ChallengeSets
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            var numArray = new int[4] { number1, number2, number3, number4 };
+            return numArray.Min();
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
