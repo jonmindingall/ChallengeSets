@@ -128,7 +128,11 @@ namespace ChallengeSets
 
         public int Factorial(int number)
         {
-            if (number == 0)
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException("Paramenter can't be negative");
+            }
+            else if (number == 0)
             {
                 return 1;
             }
