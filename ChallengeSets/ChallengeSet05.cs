@@ -18,12 +18,26 @@ namespace ChallengeSets
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
+
             throw new NotImplementedException();
+
+
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+            {
+                return false;
+            }
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i - 1] > numbers[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
