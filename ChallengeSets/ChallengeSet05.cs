@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
@@ -19,7 +20,13 @@ namespace ChallengeSets
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
 
-            throw new NotImplementedException();
+            foreach (var item in businesses)
+            {
+                if (item.TotalRevenue == 0)
+                {
+                    item.Name = "CLOSED";
+                }
+            }
 
 
         }
@@ -62,7 +69,14 @@ namespace ChallengeSets
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            string sentence = "";
+            if (words == null || words.Length == 0)
+            {
+                return "";
+            }
+            var res = words.Aggregate((current, next) => current + next);
+            return res;
+
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
