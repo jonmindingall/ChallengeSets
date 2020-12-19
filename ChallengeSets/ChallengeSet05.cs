@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ChallengeSets
 {
@@ -70,14 +71,42 @@ namespace ChallengeSets
         public string TurnWordsIntoSentence(string[] words)
         {
             string sentence = "";
+            string newSentence = null;
             if (words == null || words.Length == 0)
             {
                 return "";
             }
-            var res = words.Aggregate((current, next) => current + next);
-            return res;
+            
+            foreach (var item in words)
+            {
+                if (item != " ")
+                {
+                    string newItem = item.Replace(" ", String.Empty);
+                    sentence += (newItem + ' ');
+                }
+                                     
+            }
+            if (sentence == "" || sentence == " ")
+            {
+                return "";
+            }
+            else
+            {
+                newSentence = Regex.Replace(sentence, " {2,}", " ");
+                return newSentence.Trim() + '.';
+            }
+            
+            
+            
+
 
         }
+            
+            
+
+
+
+        
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
