@@ -52,7 +52,22 @@ namespace ChallengeSets
 
         public bool IsPrimeNumber(int num)
         {
-            throw new NotImplementedException();
+            if (num <= 1) return false;
+            if (num == 2) return true;
+            if (num % 2 == 0) return false;
+
+            var boundary = (int)Math.Floor(Math.Sqrt(num));
+
+            for (int i = 3; i <= boundary; i += 2)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+                
+
+            return true;
+
+           
         }
 
         public int IndexOfLastUniqueLetter(string str)
