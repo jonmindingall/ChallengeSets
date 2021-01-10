@@ -7,7 +7,47 @@ namespace ChallengeSets
     {
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            throw new NotImplementedException();
+            var valueToReturn = false;
+            if (words == null || word == null)
+            {
+                return false;
+            }
+            else
+            {
+                foreach (var item in words)
+                {
+                    if (ignoreCase && item != null)
+                    {
+                        if (item.ToLower() == word.ToLower())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            valueToReturn = false;
+                        }
+                        
+                    
+                    }
+                    else
+                    {
+                        if (item == word)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            valueToReturn = false;
+                        }
+                        
+                            
+                    }
+                    
+                }
+                return valueToReturn;
+
+            }
+            
         }
 
         public bool IsPrimeNumber(int num)
