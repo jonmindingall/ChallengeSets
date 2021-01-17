@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
@@ -72,7 +73,11 @@ namespace ChallengeSets
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            return str.IndexOf(
+                        str.Distinct()
+                                .Reverse()
+                                .Where(x => str.Where(y => y.Equals(x)).Count() == 1)
+                                .FirstOrDefault());
         }
 
         public int MaxConsecutiveCount(int[] numbers)
@@ -86,3 +91,4 @@ namespace ChallengeSets
         }
     }
 }
+
