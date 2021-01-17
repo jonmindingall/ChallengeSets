@@ -87,7 +87,17 @@ namespace ChallengeSets
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            var newList = new List<double>();
+            if ((n <= 0) || (elements == null))
+            {
+                return newList.ToArray();
+            }
+            for (int i = n-1; i < elements.Count(); i+=n)
+            {
+                newList.Add(elements[i]);
+            }
+
+            return newList.ToArray();
         }
     }
 }
