@@ -25,7 +25,7 @@ namespace ChallengeSets.Tests
                     businesses.Add(new Business()
                     {
                         TotalRevenue = revenues[i],
-                        TotalExpenses = expenses[i]
+                        TotalExpenses = expenses[i]                                                                                                    
                     });
                 }
             }
