@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
@@ -45,7 +46,14 @@ namespace ChallengeSets
         public string GetNameOfHighestParentCompany(Business business)
         {
             // If there is Company A, whose parent is Company B, whose parent is Company C, then given Company A return Company C
-            throw new NotImplementedException();
+            Business company = business;
+            while (company.ParentCompany != null)
+            {
+                company = company.ParentCompany;
+            }
+
+            return company.Name;
+            
         }
 
         public enum TicTacToeResult { X, O, Draw }
@@ -54,9 +62,41 @@ namespace ChallengeSets
             throw new NotImplementedException();
         }
 
+
+        //{
+        //    var backDiagonal = new List<char>();
+
+        //    backDiagonal.Add(finalBoard[0, 2]);
+        //    backDiagonal.Add(finalBoard[1, 1]);
+        //    backDiagonal.Add(finalBoard[2, 0]);
+
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        var vertLine = new List<char>();
+        //        var horzLine = new List<char>();
+        //        var fordDiagonal = new List<char>();
+        //    }
+        //}
+
         public bool EachArrayInJaggedArrayContainsTargetNumber(int[][] numbers, int targetNumber)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+            {
+                return false;
+            }
+
+            bool flag = true;
+
+            foreach (var items in numbers)
+            {
+                if (!items.Contains(targetNumber))
+                {
+                    flag = false;
+                }
+            }
+
+            return flag;
+
         }
     }
 }
